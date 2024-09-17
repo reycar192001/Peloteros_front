@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta hhtp-equiv="X-UA-Compatible"content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="@{/}">Peloteros</a>
+            <a href="Login.html">Login</a>
+        </nav> 
+    </header>
+    <div class="background"></div>
+    <div class="container">
+        <div class="content">
+            <h2 class="logo"><i class='bx bx-football'></i>Peloteros</h2>
+            <div class="text-sci">
+                <h2>Bienvenido!<br><span>A nuestra Pagina</span></h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing 
+                    elit. Accusantium, ipsam asperiores maxime quidem 
+                    porro sunt ab aut consectetur, adipisci expedita 
+                    esse iusto nisi, exercitationem eos repudiandae 
+                    eius debitis molestiae explicabo!</p>
+                    <div class="social-icons">
+                        <a href="#"><i class='bx bxl-facebook'></i></a>
+                        <a href="#"><i class='bx bxl-instagram'></i></a>
+                        <a href="#"><i class='bx bxl-youtube'></i></a>
+                        <a href="#"><i class='bx bxl-twitter'></i></a>
+                    </div>
+            </div>
+        </div>
+        <div class="logreg-box">
+            <div class="form-box register">
+                <form action="@{/usuario/saveusuario}" method="post">
+                    <h2>Registrate</h2>
+
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-user'></i></span>
+                        <input type="text" id="nomusuario" name="nomusuario"  required>
+                        <label>Nombre</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-envelope' ></i></span>
+                        <input type="email" id="correo" name="correo" autocomplete="off" required>
+                        <label>Email</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-lock-alt' ></i></span>
+                        <input type="password" id="clave" name="clave"  required>
+                        <label>Contraseña</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox">Aceptas los terminos y condiciones</label>
+                    </div>
+                    <button type="submit" class="btn">Registrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
