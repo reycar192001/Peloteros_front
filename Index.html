@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-        href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-        rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style1.css">
     <title>Menu Peloteros</title>
 </head>
+
 <body>
     <nav>
         <div class="nav_header">
@@ -40,16 +40,65 @@
                     <button class="btn">Mas Informacion</button>
                 </div>
             </div>
-            
+
             <div class="header_image">
                 <img src="Recursos/pelota.png" alt="">
-            </div>      
+            </div>
         </div>
     </header>
 
-    
+    <section class="section_container destination__container" id="about">
+        <h2 class="section_header">Alquila tu Cancha</h2>
+        <p class="section_description">
+            Elige la mejor cancha para jugar
+        </p>
+        <div class="destination__grid">
+            <div class="destination__card">
+                <img src="Recursos/cancha1.PNG" alt="destination" />
+                <div class="destination__card__details">
+                    <div>
+                        <h4>Cancha 1</h4>
+                        <p>11 Jugadores</p>
+                    </div>
+                    <div class="destination__rating">
+                        <span><i class="ri-star-fill"></i></span>
+                        4.7
+                    </div>
+                </div>
+            </div>
+            <div class="destination__card">
+                <img src="Recursos/cancha2.PNG" alt="destination" />
+                <div class="destination__card__details">
+                    <div>
+                        <h4>Cancha 2</h4>
+                        <p>9 Jugadores</p>
+                    </div>
+                    <div class="destination__rating">
+                        <span><i class="ri-star-fill"></i></span>
+                        4.5
+                    </div>
+                </div>
+            </div>
+            <div class="destination__card">
+                <img src="Recursos/cancha3.PNG" alt="destination" />
+                <div class="destination__card__details">
+                    <div>
+                        <h4>Cancha 3</h4>
+                        <p>6 Jugadores</p>
+                    </div>
+                    <div class="destination__rating">
+                        <span><i class="ri-star-fill"></i></span>
+                        4.8
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="main.js"></script>
 </body>
+
 </html>
