@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="Styles/IndexStyle.css">
     <title>Menu Peloteros</title>
 </head>
 
@@ -22,13 +22,14 @@
         </div>
         <ul class="nav_links" id="nav-links">
             <li><a href="#home">HOME</a></li>
-            <li><a href="#service">NOSOTROS</a></li>
+            <li><a href="lista.html">USUARIOS</a></li>
             <li><a href="#canchas">CANCHAS</a></li>
+            <li><a href="Nosotros.html">NOSOTROS</a></li>
             <li><a href="Login.html">LOGIN</a></li>
             <li><a href="#home">HOME</a></li>
         </ul>
         <div class="nav_btns">
-            <button class="btn">ALQUILA TU CANCHA</button>
+            <button onclick="window.location.href='Horarios.html';" class="btn">ALQUILA TU CANCHA</button>
         </div>
     </nav>
     <header id="home">
@@ -47,6 +48,7 @@
         </div>
     </header>
 
+    <div id="canchas"></div>
     <section class="section_container destination__container" id="about">
         <h2 class="section_header">Alquila tu Cancha</h2>
         <p class="section_description">
@@ -61,11 +63,13 @@
                         <p>11 Jugadores</p>
                     </div>
                     <div class="destination__rating">
+                        <a class="detallesbtn" href="Horarios.html">
                         <span><i class="ri-star-fill"></i></span>
-                        4.7
+                        Reservar</a>
                     </div>
                 </div>
             </div>
+            
             <div class="destination__card">
                 <img src="Recursos/cancha2.PNG" alt="destination" />
                 <div class="destination__card__details">
@@ -74,8 +78,9 @@
                         <p>9 Jugadores</p>
                     </div>
                     <div class="destination__rating">
+                        <a class="detallesbtn" href="Horarios.html">
                         <span><i class="ri-star-fill"></i></span>
-                        4.5
+                        Reservar</a>
                     </div>
                 </div>
             </div>
@@ -87,18 +92,108 @@
                         <p>6 Jugadores</p>
                     </div>
                     <div class="destination__rating">
+                        <a class="detallesbtn" href="Horarios.html">
                         <span><i class="ri-star-fill"></i></span>
-                        4.8
+                        Reservar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="destination__card">
+                <img src="Recursos/cancha1.PNG" alt="destination" />
+                <div class="destination__card__details">
+                    <div>
+                        <h4>Cancha 1</h4>
+                        <p>11 Jugadores</p>
+                    </div>
+                    <div class="destination__rating">
+                        <a class="detallesbtn" href="Horarios.html">
+                        <span><i class="ri-star-fill"></i></span>
+                        Reservar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="destination__card">
+                <img src="Recursos/cancha2.PNG" alt="destination" />
+                <div class="destination__card__details">
+                    <div>
+                        <h4>Cancha 2</h4>
+                        <p>9 Jugadores</p>
+                    </div>
+                    <div class="destination__rating">
+                        <a class="detallesbtn" href="Horarios.html">
+                        <span><i class="ri-star-fill"></i></span>
+                        Reservar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="destination__card">
+                <img src="Recursos/cancha3.PNG" alt="destination" />
+                <div class="destination__card__details">
+                    <div>
+                        <h4>Cancha 3</h4>
+                        <p>6 Jugadores</p>
+                    </div>
+                    <div class="destination__rating">
+                        <a class="detallesbtn" href="Horarios.html">
+                        <span><i class="ri-star-fill"></i></span>
+                        Reservar</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <footer>
+        <div class="row">
+
+            <div class="col">
+                <img src="Recursos/logo.png" class="logo">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Praesentium soluta reprehenderit minus, dolor quasi omnis a sit, 
+                    deserunt corporis expedita asperiores vitae animi, in dolorum maxime 
+                    alias rem nemo laborum.</p>
+            </div>
+            <div class="col">
+                <h3>Office <div class="underline"><span></span></div></h3>
+                <p>ITPL Road</p>
+                <p>Lima, Comas</p>
+                <p>Trapiche, 315, Peru</p>
+                <p class="email-id">peloteros@gmail.com</p>
+                <h4>+51 934801388</h4>
+            </div>
+            <div class="col">
+                <h3>Links <div class="underline"><span></span></div></h3>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Servicios</a></li>
+                    <li><a href="">Nosotros</a></li>
+                    <li><a href="">Direccion</a></li>
+                    <li><a href="">Contactos</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h3>Peloteros <div class="underline"><span></span></div></h3>
+                <form action="">
+                    <i class="ri-mail-line"></i>
+                    <input type="email" placeholder="Ingrese su email" required>
+                    <button type="submit"><i class="ri-arrow-right-line"></i></button>
+                </form>
+                <div class="social-icons">
+                    <i class="ri-facebook-fill"></i>
+                    <i class="ri-youtube-line"></i>
+                    <i class="ri-whatsapp-line"></i>
+                    <i class="ri-instagram-line"></i>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">Derechos Reservados © 2024 - Peloteros</p>
+    </footer>
+
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="main.js"></script>
+    <script src="Js/Index.js"></script>
 </body>
 
 </html>

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta hhtp-equiv="X-UA-Compatible"content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrarse</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Styles/LoginREgisterStyle.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <header class="header">
         <nav class="navbar">
-            <a href="@{/}">Peloteros</a>
+            <a href="Index.html">Peloteros</a>
             <a href="Login.html">Login</a>
         </nav> 
     </header>
@@ -36,7 +36,7 @@
         </div>
         <div class="logreg-box">
             <div class="form-box register">
-                <form action="@{/usuario/saveusuario}" method="post">
+                <form  id="usuarioForm">
                     <h2>Registrate</h2>
 
                     <div class="input-box">
@@ -47,7 +47,7 @@
 
                     <div class="input-box">
                         <span class="icon"><i class='bx bxs-envelope' ></i></span>
-                        <input type="email" id="correo" name="correo" autocomplete="off" required>
+                        <input type="text" id="correo" name="correo" autocomplete="off" required>
                         <label>Email</label>
                     </div>
 
@@ -57,12 +57,14 @@
                         <label>Contraseña</label>
                     </div>
                     <div class="remember-forgot">
-                        <label><input type="checkbox">Aceptas los terminos y condiciones</label>
+                        <label><input type="checkbox" required>Aceptas los terminos y condiciones</label>
                     </div>
                     <button type="submit" class="btn">Registrar</button>
+                    <div id="resultado"></div>
                 </form>
             </div>
         </div>
     </div>
+    <script src="/Js/Registro.js"></script>
 </body>
 </html>

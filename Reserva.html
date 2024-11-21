@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Canchas - Peloteros</title>
+    <link rel="stylesheet" href="Styles/ReservasStyle.css">
+</head>
+<body>
+
+<!-- Encabezado -->
+<header>
+    <div class="logo">Peloteros</div>
+    <nav>
+        <a href="#">Nosotros</a>
+        <a href="#">Productos</a>
+        <a href="#">Canchas</a>
+        <a href="#">Eventos</a>
+        <a href="#">Contacto</a>
+        <a href="#" class="login">Login</a>
+    </nav>
+</header>
+
+<!-- Contenido Principal -->
+<main>
+    <!-- Sección de Fecha y Turno -->
+    <section class="left-panel">
+        <h2>Elije el horario</h2>
+        <p>Selecciona la fecha y horario de tu preferencia</p>
+        <label for="date">Fecha</label>
+        <input type="date" id="date">
+        <div class="calendar"></div>
+
+        <div class="turno">
+            <label>Turno</label>
+            <button class="turno-btn active">Día</button>
+            <button class="turno-btn">Noche</button>
+        </div>
+
+        <div class="actions">
+            <button class="continue-btn">Continuar</button>
+            <button class="back-btn">Regresar</button>
+        </div>
+    </section>
+
+    <!-- Calendario de Canchas -->
+    <section class="availability">
+        <div class="availability-header">
+            <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span>
+        </div>
+        <div class="time-slots">
+            <span>8:00</span><span>9:00</span><span>10:00</span><span>11:00</span><span>12:00</span>
+            <span>13:00</span><span>14:00</span><span>15:00</span><span>16:00</span><span>17:00</span>
+        </div>
+        <div class="grid">
+            <div class="slot unavailable" style="grid-row: 1 / 2; grid-column: 1 / 2;"></div>
+            <div class="slot unavailable" style="grid-row: 2 / 3; grid-column: 2 / 3;"></div>
+            <div class="slot unavailable" style="grid-row: 3 / 4; grid-column: 3 / 4;"></div>
+            <div class="slot unavailable" style="grid-row: 4 / 5; grid-column: 4 / 5;"></div>
+            <div class="slot unavailable" style="grid-row: 5 / 6; grid-column: 5 / 6;"></div>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>

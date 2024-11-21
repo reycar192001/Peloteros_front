@@ -1,0 +1,146 @@
+@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner .slider{
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    top: 10%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 20s linear infinite;
+    z-index: 2;
+    
+}
+
+@keyframes autoRun{
+    from{
+        transform: perspective(1000px) rotateX(-8deg) rotateY(0deg);
+    }to{
+        transform: perspective(1000px) rotateX(-8deg) rotateY(360deg);
+    }
+}
+
+.banner .slider .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    transform:  
+        rotateY(calc( ( var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(550px);
+}
+
+.banner .slider .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.banner .slider .item img:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el ratón */
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+.banner .content{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1400px, 100vw);
+    height: max-content;
+    padding-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+.banner .content h1{
+    font-family: "ICA Rubrik";
+    font-size: 10em;
+    line-height: 1em;
+    color: #000;
+    position: relative;
+    bottom: 100px;
+}
+
+.banner .content h1::after{
+    position: absolute;
+    inset: 0 0 0 0;
+    content: attr(data-content);
+    z-index: 2;
+    -webkit-text-stroke: 2px #d2d2d2;
+    color: transparent;
+    
+}
+
+.banner .content .author{
+    font-family: Poppins;
+    text-align: right;
+    max-width: 300px;
+}
+
+.banner .content h2{
+    font-size: 2em;
+}
+
+.banner .content .model{
+    background-image: url(/Recursos/logo.png);
+    width: 100%;
+    height: 75vh;
+    position: absolute;
+    bottom: 150px;
+    left: 0;
+    background-size: auto 120%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 1;
+}
+
+/*-------------------------------------------------------------------*/
+/* Estilo general del contenedor del mapa */
+.mapa-container {
+    text-align: center; /* Centra el título y el mapa */
+    margin: 0 auto 50px auto;
+}
+
+/* Título encima del mapa */
+.mapa-container h3 {
+    font-size: 50px;
+    margin-bottom: 10px;
+    font-family: Poppins;
+    color: #333; /* Cambia el color del título si lo deseas */
+}
+
+/* Contenedor del mapa con efectos de borde y sombra */
+.mapa {
+    width: 600px;
+    height: 450px;
+    overflow: hidden; /* Esconde los bordes del iframe si sobresalen */
+    border-radius: 15px; /* Redondea los bordes */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5); /* Añade sombra para un efecto de difuminado */
+    margin: 0 auto;
+    transition: transform 0.3s ease; /* Efecto de transición */
+}
+
+.mapa:hover {
+    transform: scale(1.05); /* Levemente agranda el mapa al pasar el ratón */
+}
+
+/* Estilos específicos para el iframe */
+.mapa iframe {
+    width: 100%;
+    height: 100%;
+    border: none; /* Remueve el borde por defecto del iframe */
+    border-radius: 15px; /* Aplica bordes redondeados al iframe */
+}

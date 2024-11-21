@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.calendar-container {
+    margin-bottom: 20px;
+}
+
+#schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* Una columna para horarios y siete para canchas */
+    gap: 1px;
+    border-collapse: collapse;
+    background-color: #333;
+}
+
+.header-cell, .time-cell, .slot {
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+
+.header-cell {
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+}
+
+.time-cell {
+    background-color: #eee;
+    color: #333;
+}
+
+.slot.available {
+    background-color: #4CAF50;
+}
+
+.slot.unavailable {
+    background-color: #D9534F;
+}
