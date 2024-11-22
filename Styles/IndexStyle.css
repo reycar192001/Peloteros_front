@@ -1,10 +1,11 @@
 /*INDEX-----------------------------------------------------------------------------------*/
 
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.cdnfonts.com/css/poppins');
 
 :root{
-    --primary-color: #2887ff;
-    --primary-color-dark:#2476da;
+    --primary-color: #3f8310;
+    --primary-color-dark:#88f53e;
     --text-dark:#0a0a0a;
     --text-light:#737373;
     --extra-light: #f3f4f6;
@@ -46,7 +47,7 @@
     font-size: 1rem;
     white-space: nowrap;
     color: var(--white);
-    background-color: var(--primary-color);
+    background-color: var(--text-dark);
     border-radius: 5rem;
     transition: 0.3s;
     cursor: pointer;
@@ -264,6 +265,171 @@ header::before {
     background-color: var(--primary-color-dark);
 }
   
+/*----------------------------------------------------------------*/
+footer{
+    width: 100%;
+    position: absolute;
+    /*bottom: 0;*/
+    background: linear-gradient(to right, #245c22,#4a7c4b, #484946);
+    color: #fff;
+    padding: 100px 0 30px;
+    border-top-left-radius: 125px;
+    border-top-right-radius: 125px;
+    font-size: 13px;
+    line-height: 20px;
+    font-family: Poppins;
+}
+
+.row{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.col{
+    flex-basis: 25%;
+    padding: 10px;
+}
+
+.col:nth-child(2), .col:nth-child(3){
+    flex-basis: 15%;
+}
+
+.logo{
+    width: 90px;
+    margin-bottom: 30px;
+    margin-left: 70px;
+}
+
+.col h3{
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.email-id{
+    width: fit-content;
+    border-bottom: 1px solid #fff;
+    margin: 20px 0;
+}
+
+ul li{
+    list-style: none;
+    margin-bottom: 12px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+form{
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 50px;
+}
+
+form .ri-mail-line{
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+form input{
+    width: 100%;
+    background: transparent;
+    color: #fff;
+    border: 0;
+    outline: none;
+}
+
+input[type="email"]::placeholder {
+    color: #fff;
+}
+
+form button{
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+form button .ri-arrow-right-line{
+    font-size: 16px;
+    color: #fff;
+}
+
+.social-icons i{
+    width: 40px;
+    height: 40px;
+    border-radius: 30%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 30px;
+    color: #000;
+    background: #DAF7A6 ;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+hr{
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    margin: 20px auto;
+}
+
+.copyright{
+    text-align: center;
+}
+
+.underline{
+    width: 100%;
+    height: 5px;
+    background: #767676;
+    border-radius: 3px;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    overflow: hidden;
+}
+
+.underline span{
+    width: 15px;
+    height: 100%;
+    background: #fff;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    animation: moving 2s linear infinite;
+}
+
+@keyframes moving{
+    0%{
+        left: -20px;
+    }
+    100%{
+        left: 100%;
+    }
+}
+@media (max-width: 700px){
+    footer{
+        bottom: unset;
+    }
+    .col{
+        flex-basis: 25%;
+    }
+    
+    .col:nth-child(2), .col:nth-child(3){
+        flex-basis: 15%;
+    }
+}
 /*----------------------------------------------------------------*/
 
 @media (width > 540px) {
