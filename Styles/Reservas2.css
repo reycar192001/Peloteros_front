@@ -1,0 +1,27 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 50px);
+    gap: 5px;
+    padding: 10px;
+}
+
+.slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.available {
+    background-color: #4CAF50;
+}
+
+.unavailable {
+    background-color: #b71c1c;
+}
+.mantenimiento {
+    background-color: #b71c1c;
+}

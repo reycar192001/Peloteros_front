@@ -41,3 +41,10 @@ ScrollReveal().reveal(".destination__card", {
     ...scrollRevealOption,
     interval: 500,
 });
+
+
+function setPlayers(players) {
+    sessionStorage.setItem("numJugadores", players);
+    console.log(sessionStorage.getItem("numJugadores"));
+    window.location.href = "Horarios.html";
+}

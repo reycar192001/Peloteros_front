@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peloteros - Confirmación de Reserva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #e9edf1;
+        }
+
+        .container {
+            background-color: #f5f7fa;
+            width: 300px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 14px;
+            color: #333;
+            display: block;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        input[type="text"] {
+            width: 90%;
+            padding: 8px;
+            
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .confirm-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 45%;
+        }
+
+        .edit-button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 45%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Peloteros</h1>
+        <label for="numeroCancha">Número de cancha</label>
+        <input type="text" id="numeroCancha" readonly>
+
+        <label for="horario">Horario</label>
+        <input type="text" id="horario" readonly>
+
+        <label for="fecha">Fecha</label>
+        <input type="text" id="fecha" readonly>
+
+        <div class="button-container">
+            <button class="confirm-button" onclick="confirmarReserva()">Confirmar</button>
+            <button class="edit-button" onclick="editarReserva()">Editar</button>
+        </div>
+    </div>
+
+    <script src="/Js/Reservarregister.js"></script>
+</body>
+</html>

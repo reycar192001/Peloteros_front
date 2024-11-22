@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="Styles/IndexStyle.css">
     <title>Menu Peloteros</title>
 </head>
 
@@ -28,7 +28,7 @@
             <li><a href="#home">HOME</a></li>
         </ul>
         <div class="nav_btns">
-            <button class="btn">ALQUILA TU CANCHA</button>
+            <button onclick="window.location.href='Horarios.html';" class="btn">ALQUILA TU CANCHA</button>
         </div>
     </nav>
     <header id="home">
@@ -52,7 +52,7 @@
         <p class="section_description">
             Elige la mejor cancha para jugar
         </p>
-        <div class="destination__grid">
+        <div id="canchas" class="destination__grid">
             <div class="destination__card">
                 <img src="Recursos/cancha1.PNG" alt="destination" />
                 <div class="destination__card__details">
@@ -61,11 +61,13 @@
                         <p>11 Jugadores</p>
                     </div>
                     <div class="destination__rating">
+                        <a class="detallesbtn" href="Horarios.html">
                         <span><i class="ri-star-fill"></i></span>
-                        4.7
+                        Reservar</a>
                     </div>
                 </div>
             </div>
+            
             <div class="destination__card">
                 <img src="Recursos/cancha2.PNG" alt="destination" />
                 <div class="destination__card__details">
@@ -74,8 +76,9 @@
                         <p>9 Jugadores</p>
                     </div>
                     <div class="destination__rating">
+                        <a class="detallesbtn" href="Horarios.html">
                         <span><i class="ri-star-fill"></i></span>
-                        4.5
+                        Reservar</a>
                     </div>
                 </div>
             </div>
@@ -87,8 +90,51 @@
                         <p>6 Jugadores</p>
                     </div>
                     <div class="destination__rating">
+                        <a class="detallesbtn" href="Horarios.html">
                         <span><i class="ri-star-fill"></i></span>
-                        4.8
+                        Reservar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="destination__card">
+                <img src="Recursos/cancha1.PNG" alt="destination" />
+                <div class="destination__card__details">
+                    <div>
+                        <h4>Cancha 1</h4>
+                        <p>11 Jugadores</p>
+                    </div>
+                    <div class="destination__rating">
+                        <a class="detallesbtn" href="Horarios.html">
+                        <span><i class="ri-star-fill"></i></span>
+                        Reservar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="destination__card">
+                <img src="Recursos/cancha2.PNG" alt="destination" />
+                <div class="destination__card__details">
+                    <div>
+                        <h4>Cancha 2</h4>
+                        <p>9 Jugadores</p>
+                    </div>
+                    <div class="destination__rating">
+                        <a class="detallesbtn" href="Horarios.html">
+                        <span><i class="ri-star-fill"></i></span>
+                        Reservar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="destination__card">
+                <img src="Recursos/cancha3.PNG" alt="destination" />
+                <div class="destination__card__details">
+                    <div>
+                        <h4>Cancha 3</h4>
+                        <p>6 Jugadores</p>
+                    </div>
+                    <div class="destination__rating">
+                        <a class="detallesbtn" href="Horarios.html">
+                        <span><i class="ri-star-fill"></i></span>
+                        Reservar</a>
                     </div>
                 </div>
             </div>
@@ -98,7 +144,7 @@
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="main.js"></script>
+    <script src="Js/Index.js"></script>
 </body>
 
 </html>

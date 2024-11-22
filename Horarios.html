@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Canchas - Peloteros</title>
+    <link rel="stylesheet" href="Styles/HorariosStyle.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Elije el horario</h1>
+        <div class="calendar-container">
+            <label for="date-picker">Fecha</label>
+            <input type="date" id="date-picker" name="date-picker">            
+            <button onclick="window.location.href='Index.html';">Regresar</button>
+            <button onclick="window.location.href='RegistroReserva.html';">Continuar</button>
+        </div>
+
+        <div id="schedule-grid" class="schedule-grid">
+            <!-- Horarios y Canchas se cargarán aquí -->
+        </div>
+    </div>
+
+    <script src="Js/Horarios.js"></script>
+</body>
+</html>
