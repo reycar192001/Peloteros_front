@@ -1,0 +1,129 @@
+.custom-popup {
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    border: 2px solid #ffcc00;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.custom-title {
+    color: #ff9900;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.custom-content {
+    color: #333333;
+    font-size: 18px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.custom-button {
+    background-color: #ffcc00 !important; /* Verde éxito */
+    color: white !important;
+    border-radius: 10px;
+    padding: 15px 40px; /* Botón más grande */
+    border: none !important; /* Quitar borde */
+    font-size: 18px; /* Texto más grande */
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px; /* Límite de ancho máximo */
+    margin: 10px auto;
+    display: block;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para efecto 3D */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animación */
+}
+
+/* Efecto hover */
+.custom-button:hover {
+    background-color: #e6a900 !important; /* Verde más oscuro */
+    transform: scale(1.05); /* Aumento ligero */
+}
+/*----------------------------------------------------------*/
+.custom-popup1 {
+    background-color: #e8f8e8; /* Fondo verde claro para éxito */
+    border-radius: 15px;
+    border: 2px solid #28a745; /* Borde verde más intenso */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Efecto de sombra */
+}
+
+.custom-title1 {
+    color: #28a745; /* Color verde para éxito */
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra para destacar */
+}
+
+.custom-content1 {
+    color: #444444; /* Texto más oscuro para mayor legibilidad */
+    font-size: 18px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Ligera sombra */
+}
+
+/* Botón personalizado */
+.custom-button1 {
+    background-color: #28a745 !important; /* Verde éxito */
+    color: white !important;
+    border-radius: 10px;
+    padding: 15px 40px; /* Botón más grande */
+    border: none !important; /* Quitar borde */
+    font-size: 18px; /* Texto más grande */
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px; /* Límite de ancho máximo */
+    margin: 10px auto;
+    display: block;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para efecto 3D */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animación */
+}
+
+/* Efecto hover */
+.custom-button1:hover {
+    background-color: #218838 !important; /* Verde más oscuro */
+    transform: scale(1.05); /* Aumento ligero */
+}
+
+/*----------------------------------------------------------*/
+
+.custom-popup2 {
+    background-color: #e8f8e8; /* Fondo verde claro para éxito */
+    border-radius: 15px;
+    border: 2px solid #d31a1a; /* Borde verde más intenso */
+    box-shadow: 0px 4px 10px rgba(207, 15, 15, 0.2); /* Efecto de sombra */
+}
+
+.custom-title2 {
+    color: #d42222; /* Color verde para éxito */
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra para destacar */
+}
+
+.custom-content2 {
+    color: #444444; /* Texto más oscuro para mayor legibilidad */
+    font-size: 18px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Ligera sombra */
+}
+
+/* Botón personalizado */
+.custom-button2 {
+    background-color: #b3241a !important; /* Verde éxito */
+    color: white !important;
+    border-radius: 10px;
+    padding: 15px 40px; /* Botón más grande */
+    border: none !important; /* Quitar borde */
+    font-size: 18px; /* Texto más grande */
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px; /* Límite de ancho máximo */
+    margin: 10px auto;
+    display: block;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para efecto 3D */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animación */
+}
+
+/* Efecto hover */
+.custom-button2:hover {
+    background-color: #e90f0f !important; /* Verde más oscuro */
+    transform: scale(1.05); /* Aumento ligero */
+}

@@ -5,7 +5,7 @@
 
 :root{
     --primary-color: #3f8310;
-    --primary-color-dark:#88f53e;
+    --primary-color-dark:#408f28;
     --text-dark:#0a0a0a;
     --text-light:#737373;
     --extra-light: #f3f4f6;
@@ -14,8 +14,7 @@
 }
 
 *{
-    margin: 0;
-    padding: 0;
+    margin: 0;    
     box-sizing: border-box;
 }
 
@@ -85,12 +84,9 @@ body {
     font-family: "DM Sans",sans-serif;
 }
 
-nav{
-    position: fixed;
-    isolation:isolate;
-    top: 0;
-    width: 100%;
-    z-index: 9;
+nav{    
+    isolation:isolate;   
+    width: 100%;    
 }
 
 .nav_header{
@@ -113,35 +109,57 @@ nav{
     cursor: pointer;
 }
 
-.nav_links{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 2rem;
+.nav_links{     
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 2rem;
-    background-color: var(--primary-color);
+    align-items: center;    
+    gap: 2rem;    
     transition: transform.5s;
     z-index: -1;
+    justify-content: flex-start; /* Alineación a la izquierda */
 }
 .nav_links.open{
     transform:translateY(100%);
 }
 .nav_links a{
-    font-weight: 600;
-    color: var(--white);
+    font-weight: 600;    
     white-space: nowrap;
+    margin: 0 1rem; /* Espacio entre los enlaces */
+    font-size: 1rem; /* Tamaño de la fuente de los enlaces */
 }
 .nav_links a:hover{
     color:var(--text-dark);
 }
 .nav_btns{
-    display: none;
+    display: flex; /* Muestra los elementos en línea */
+    align-items: center; /* Centra verticalmente */
+    gap: 1rem; /* Espacio entre los elementos */
 }
+
+
+#welcome-message {
+    color: black; /* Mismo color que el texto del nav */
+    font-size: 1rem; /* Ajusta el tamaño del texto */
+    font-weight: 600; /* Agrega peso al texto */
+}
+
+#login-btn,
+#logout-btn {
+    padding: 0.5rem 1rem; /* Ajuste del tamaño del botón */
+    font-size: 0.9rem; /* Tamaño del texto del botón */
+    border-radius: 20px; /* Botones más redondeados */
+    background-color: var(--text-dark); /* Color de fondo del botón */
+    color: var(--white); /* Color del texto */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor al pasar sobre el botón */
+    transition: background-color 0.3s;
+}
+
+#login-btn:hover,
+#logout-btn:hover {
+    background-color: var(--primary-color-dark); /* Color de hover */
+}
+
+
 /*---------------------------------------------------*/
 header{
 
@@ -304,6 +322,10 @@ footer{
     margin-left: 70px;
 }
 
+.col p{
+    text-align: justify;
+}
+
 .col h3{
     width: fit-content;
     margin-bottom: 40px;
@@ -318,7 +340,7 @@ footer{
 
 ul li{
     list-style: none;
-    margin-bottom: 12px;
+    
 }
 
 ul li a{
@@ -437,26 +459,6 @@ hr{
       grid-template-columns: repeat(2, 1fr);
     }
 }
-/*header .trip_bx{
-    position: relative;
-    width: 95%;
-    height: auto;
-    margin: auto;
-}
-header .trip_bx .search_bx{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 60%;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--white);
-    border: 5px ;
-    box-shadow: 0px 10px 25px rgb(114, 114, 114);
-    z-index: 1;
-}*/
 
 
 @media(width > 768px){
@@ -553,3 +555,67 @@ header .trip_bx .search_bx{
     }
     
 }
+
+/*----------------------------------------------------------------*/
+
+.chatbot-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #00A1D5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Imagen dentro del botón */
+.chatbot-btn img {
+    width: 80px;  /* Ajusta el tamaño de la imagen según lo necesites */
+    height: 80px;
+} 
+
+/* Estilo del contenedor del chatbot */
+.chatbot-container {
+    position: fixed;
+    right: 20px;
+    bottom: 90px; /* Se coloca encima del botón */
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 999;
+}
+
+/* Estilo para el iframe */
+.chatbot-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 20px;
+}
+
+/* Estilo del mensaje flotante */
+.tooltip {
+    position: fixed;
+    bottom: 35px;
+    right: 90px;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1001;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/*----------------------------------------------------------------*/
+

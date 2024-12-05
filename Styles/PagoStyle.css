@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Cabin:ital,wght@0,400..700;1,400..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+body {
+    font-family: 'DM Sans', Arial, sans-serif;
+    background-color: #f4f4f9; /* Fondo suave */
+    background: linear-gradient(135deg, #4CAF50, #81C784, #A5D6A7);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    align-items: center;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #00796b; /* Color verde para el título */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.image-container {
+    margin-bottom: 20px; /* Espacio entre la imagen y el formulario */
+}
+
+.payment-image {
+    width: 100%; /* Hace que la imagen ocupe todo el ancho */
+    max-width: 300px; /* Tamaño máximo de la imagen */
+    border-radius: 8px; /* Bordes redondeados */
+    margin: 0 auto; /* Centra la imagen */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Estilos del formulario */
+#card-element {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+button {
+    font-family: 'DM Sans', Arial, sans-serif;
+    width: 100%;
+    padding: 15px;
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #009688;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+button:hover {
+    background-color: #00796b; /* Verde más oscuro en hover */
+}
+
+button:disabled {
+    background-color: #d3d3d3;
+    cursor: not-allowed;
+}
+
+
+
+/* Mensajes de error o confirmación */
+#payment-message {
+    font-size: 20px;
+    color: green;
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+}
+
+#spinner {
+    display: none;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #00bcd4;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+.payment-methods {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.payment-icon {
+    margin: 0 25px;
+    width: 50px;
+    height: auto;
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+button {
+    animation: slide-in 0.5s ease-out;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #00bcd4; /* Color de la barra */
+    border-radius: 5px;
+}
+
+.total-payment {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+.amount {
+    font-size: 24px;
+    color: #009688; /* Color vibrante */
+    font-weight: bold;
+}
+
+.message-icon {
+    margin-right: 10px;
+    color: green; /* O rojo en caso de error */
+}
+
+#payment-message {
+    color: green; /* Cambiar a rojo en caso de error */
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    button {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}

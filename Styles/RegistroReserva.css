@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Cabin:ital,wght@0,400..700;1,400..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+/* Estilo General */
+body {
+    font-family: 'DM Sans', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #4CAF50, #81C784, #A5D6A7);
+    color: #333;
+}
+
+/* Contenedor Principal */
+.container {
+    background-color: #fff;
+    width: 300px;
+    height: 520px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+    font-family: 'Baloo 2', sans-serif;
+}
+
+/* Animación */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Título */
+h1 {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+/* Formulario */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+    margin-right: 10%;
+    box-sizing: border-box;
+}
+
+label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    font-family: 'DM Sans', sans-serif;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Estilo básico para el select */
+.styled-select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ccc; /* Borde gris */
+    border-radius: 6px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Color de fondo */
+    color: #333; /* Color de la fuente */
+    appearance: none; /* Elimina la apariencia predeterminada */
+    -webkit-appearance: none; /* Para navegadores WebKit como Safari */
+    -moz-appearance: none; /* Para Firefox */
+    box-sizing: border-box; /* Asegura que el padding no afecta el tamaño */
+    cursor: pointer; /* Cambia el cursor al hacer hover */
+}
+
+/* Estilo para el contenedor de la flecha del select */
+.styled-select:focus {
+    border-color: #4CAF50; /* Resalta el borde cuando está en foco */
+    outline: none;
+}
+
+/* Estilo para el label */
+.form-group label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Estilo adicional para personalizar la flecha del select */
+.styled-select::-ms-expand {
+    display: none; /* Elimina la flecha en IE */
+}
+
+/* Agregar una flecha personalizada para los select (opcional) */
+.styled-select-container {
+    position: relative;
+}
+
+.styled-select-container:after {
+    content: '▼';
+    position: absolute;
+    right: 10px;
+    top: 70%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 16px;
+    color: #aaa;
+}
+
+.styled-select::-ms-expand {
+    display: none;
+}
+
+/* Estilo para los labels */
+.form-group label {
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Botones */
+.button-container {
+    font-family: 'DM Sans', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 18px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.confirm-button {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #4CAF50;
+    color: white;
+    width: 48%;
+}
+
+.confirm-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.edit-button {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #f44336;
+    color: white;
+    width: 48%;
+}
+
+.edit-button:hover {
+    background-color: #e53935;
+    transform: scale(1.05);
+}
+
+/* Mensaje */
+.hidden {
+    display: none;
+}

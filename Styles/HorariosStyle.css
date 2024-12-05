@@ -1,55 +1,237 @@
+/* General Reset */
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
+/* Body Styling */
 body {
     font-family: Arial, sans-serif;
+    background: #f4f4f9;
+    /*background: url('/Recursos/cancha.jpg') no-repeat center center fixed;*/ 
+    background-size: cover;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
 }
 
+/* Container Styling */
 .container {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 90%;
-    margin: 0 auto;
+    max-width: 1000px;
+    min-width: 600px;
     text-align: center;
+    overflow: hidden;
 }
 
+/* Header Styling */
 h1 {
-    font-size: 24px;
+    font-family: Arial, sans-serif;
+    font-size: 28px;
     margin-bottom: 20px;
+    color: #4CAF50;
 }
 
+/* ----------------------------Calendar Container ----------------------------------*/
 .calendar-container {
-    margin-bottom: 20px;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+    padding: 20px;
+    background: #eaeded;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 1000px;
 }
 
-#schedule-grid {
+
+
+/* ---------------------------------------------------------------------------------*/
+label {
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+/* Buttons */
+.button-group {
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-primary {
+    background: #4CAF50;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #45a049;
+}
+
+.btn-secondary {
+    background: #ccc;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background: #bbb;
+}
+
+/* Schedule Grid */
+.schedule-grid {
     display: grid;
-    /*grid-template-columns: repeat(8, 1fr);*/ /* Una columna para horarios y siete para canchas */
-    gap: 1px;
-    border-collapse: collapse;
-    background-color: #333;
+    grid-template-columns: repeat(8, 1fr); /* Ajusta según tus necesidades */
+    gap: 5px;
+    margin-top: 20px;
 }
 
 .header-cell, .time-cell, .slot {
-    padding: 10px;
-    color: white;
+    padding: 15px;
+    border-radius: 5px;
     text-align: center;
+    font-size: 14px;
 }
 
 .header-cell {
-    background-color: #333;
+    background: #333;
     color: white;
     font-weight: bold;
 }
 
 .time-cell {
-    background-color: #eee;
+    background: #eee;
     color: #333;
 }
 
+.slot {
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    cursor: pointer; 
+}
+
 .slot.available {
-    background-color: #4CAF50;
+    background: #4CAF50;
+    color: white;
 }
 
 .slot.unavailable {
-    background-color: #D9534F;
+    background: #D9534F;
+    color: white;
+}
+
+.slot.available:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+}
+
+.slot.unavailable:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+}
+
+/*--------------------botones---------------------------*/
+
+button {
+    padding: 12px 25px; /* Espaciado cómodo */
+    border: none;
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente claro */
+    font-weight: bold;
+    color: white; /* Texto blanco */
+    background-color: #4CAF50; /* Color verde */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    transition: all 0.3s ease; /* Transiciones suaves */
+    margin: 10px; /* Separación entre botones */
+}
+
+/* Efecto hover para los botones */
+button:hover {
+    background-color: #45a049; /* Cambia el color al pasar el cursor */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Incrementa la sombra */
+    transform: translateY(-3px); /* Ligera elevación */
+}
+
+/* Efecto para cuando se presiona el botón */
+button:active {
+    transform: translateY(1px); /* Baja un poco al presionarlo */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduce la sombra */
+}
+
+/* Botón secundario */
+button.secondary {
+    background-color: #ccc; /* Gris claro */
+    color: #333; /* Texto oscuro */
+}
+
+button.secondary:hover {
+    background-color: #bbb; /* Gris más oscuro al pasar el cursor */
+    color: #222; /* Texto más intenso */
+}
+
+/*-------------------------------------------------------------------------*/
+.iframe-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 70%;
+    background-color: rgba(255, 255, 255, 0.8);;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: none; /* Oculto por defecto */
+    z-index: 1000;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+/* Estilo del iframe */
+.iframe-content {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+/* Estilo del botón de cierre */
+.close-btn {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    z-index: 1001;
 }

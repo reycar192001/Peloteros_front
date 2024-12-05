@@ -19,11 +19,29 @@
             </ul>-->
         </div> 
         <div class="content">
-            <h1>EXPLORA LA PASION DEL FUTBOL</h1>
+            <h1 id="animated-text">EXPLORA LA PASION DEL FUTBOL</h1>
             <div>
-                <button type="button" onclick="window.location.href='Login.html';">Entrar</button>
+                <button type="button" onclick="window.location.href='Index.html';">Entrar</button>
             </div>
         </div>
     </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const textElement = document.getElementById("animated-text");
+    const text = textElement.textContent;
+    textElement.innerHTML = "";
+
+    text.split(" ").forEach((word, index) => {
+        const wordSpan = document.createElement("span");
+        wordSpan.textContent = word;
+        wordSpan.style.animationDelay = `${index * 0.5}s`;
+        wordSpan.style.display = "inline-block";
+        wordSpan.style.marginRight = "40px"; 
+        wordSpan.classList.add("word-animation");
+        textElement.appendChild(wordSpan);
+        });
+    });
+    </script>
 </body>
 </html>

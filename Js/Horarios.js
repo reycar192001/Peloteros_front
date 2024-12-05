@@ -1,9 +1,14 @@
-function obtenerToken() {
-    const token = localStorage.getItem('token');
-    return token;
+function validarToken() {
+    const token = localStorage.getItem('token'); 
+    if (token) {        
+        window.location.href='RegistroReserva.html';
+    } else {        
+        showAlert3("Para continuar debe Iniciar sesión."+ "\n Redirigiendo al login...");
+        window.location.href='Login.html';
+    }
 }
 
-const token = obtenerToken();
+//const token = validarToken();
 const numJugadores = sessionStorage.getItem("numJugadores");
 const datetime = obtenerDate();
 const calendar = document.getElementById("date-picker");
@@ -17,12 +22,12 @@ async function fetchScheduleDataByDateAndPlayers(date, numPlayers) {
         const response = await fetch(`http://localhost:8090/peloteros/canchas/xfechanum/${date}/${numPlayers}`, {           
             method: "GET",
             headers: {
-                "Authorization": `Bearer ${token}`,
+                //"Authorization": `Bearer ${token}`,
                 "Content-Type": "application/json"
             }
         });
         
-        const data = await response.json();
+        const data = await response.json();        
         renderScheduleGrid(data);
         
     } catch (error) {
@@ -32,16 +37,15 @@ async function fetchScheduleDataByDateAndPlayers(date, numPlayers) {
     }
 }
 
-function renderScheduleGrid(data) {
-    // Limpiar el contenedor de la cuadrícula
+function renderScheduleGrid(data) {    
     const gridContainer = document.getElementById("schedule-grid");
     gridContainer.innerHTML = ""; // Limpiar contenido anterior
 
     // Definir los nombres de las canchas y las horas de inicio para la cuadrícula
     const canchas = [...new Set(data.map(item => item.canchaId))];
     const horas = [...new Set(data.map(item => item.horaInicio))];
-    //const idhorario = [...new Set(data.map(item => item.horarioid))];
-    //const horas = ["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00"];
+    //const precio = [...new Set(data.map(item => item.precioHora))];
+    
 
     gridContainer.style.gridTemplateColumns = `repeat(${canchas.length + 1}, 1fr)`;
     // Crear la fila de encabezado con nombres de canchas
@@ -59,6 +63,7 @@ function renderScheduleGrid(data) {
                 slot.classList.add("slot", slotData.estado === "Reservado" ? "unavailable" : "available");
                 slot.textContent = slotData.estado === "Reservado" ? "Reservado" : "Disponible";
                 slot.setAttribute("data-horario-id", slotData.horarioId); // Agregar horarioId como atributo
+                //console.log(slotData)
             } else {
                 slot.classList.add("slot", "available");
                 slot.textContent = "Disponible";
@@ -71,6 +76,9 @@ function renderScheduleGrid(data) {
                 if (horarioId) {
                     console.log("Horario ID seleccionado:", horarioId);
                     localStorage.setItem("horarioid",horarioId)
+                    const costo = slotData.precioHora;
+                    console.log ("Costo:", costo);
+                    localStorage.setItem("Costo", costo+".00")
                 } else {
                     console.log("Esta celda no tiene un horarioId asignado.");
                 }
@@ -78,14 +86,60 @@ function renderScheduleGrid(data) {
                 localStorage.setItem("selectedCancha", canchaId);
                 localStorage.setItem("selectedHora", hora);
                 localStorage.setItem("selectedEstado", estado);
+                
                 }else{
-                    alert(`Seleccionaste un horario que no está disponible, elige otro por favor.`);
+                    showAlert(`Seleccionaste un horario que no está disponible, elige otro por favor.`);
                 }
                 
                 //localStorage.setItem("selectedDate", date);
             });
             gridContainer.appendChild(slot);
         });
+    });
+}
+
+function showAlert(message) {
+    Swal.fire({
+        icon: 'warning',
+        title: 'Atención',
+        text: message,
+        confirmButtonText: 'Aceptar',
+        customClass: {
+            popup: 'custom-popup',
+            title: 'custom-title',
+            content: 'custom-content',
+            confirmButton: 'custom-button'
+        }
+    });
+}
+
+function showAlert2(message) {
+    Swal.fire({
+        icon: 'success',
+        title: 'Atención',
+        text: message,
+        confirmButtonText: 'Aceptar',
+        customClass: {
+            popup: 'custom-popup1',
+            title: 'custom-title1',
+            content: 'custom-content1',
+            confirmButton: 'custom-button1'
+        }
+    });
+}
+
+function showAlert3(message) {
+    Swal.fire({
+        icon: 'error',
+        title: 'Atención',
+        text: message,
+        confirmButtonText: 'Aceptar',
+        customClass: {
+            popup: 'custom-popup2',
+            title: 'custom-title2',
+            content: 'custom-content2',
+            confirmButton: 'custom-button2'
+        }
     });
 }
 
@@ -121,8 +175,7 @@ document.getElementById("date-picker").addEventListener("change", (event) => {
     const numPlayers = 9
     if (date && numPlayers) {
         fetchScheduleDataByDateAndPlayers(date, numPlayers);
-    }
-    
+    }    
     
 });
 
@@ -145,17 +198,6 @@ function formatDate(date) {
     return `${year}-${month}-${day}`;
 }
 
-function seteardatos(){
-    // Recuperar el número de jugadores desde sessionStorage
-const numeroJugadores = sessionStorage.getItem("numeroJugadores");
-
-if (numeroJugadores) {
-    console.log("Número de jugadores:", numeroJugadores);
-    // Utilizar el número de jugadores en el código
-} else {
-    console.log("Número de jugadores no encontrado en sessionStorage.");
-}
-}
 
 function handleCellSelection(canchaId, hora, estado) {
     // Aquí puedes manejar los valores seleccionados
@@ -163,9 +205,48 @@ function handleCellSelection(canchaId, hora, estado) {
     console.log("Cancha ID:", canchaId);
     console.log("Hora:", hora);
     console.log("Estado:", estado);
+    
 
     // Puedes realizar alguna acción, como almacenar en localStorage o mostrar en pantalla
     // Ejemplo de mostrar en una alerta:
-    alert(`Seleccionaste:\nCancha: ${canchaId}\nHora: ${hora}\nEstado: ${estado}`);
+    showAlert2(`Seleccionaste:\nCancha: ${canchaId}\nHora: ${hora}\nEstado: ${estado}`);
 
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Obtener los elementos del DOM
+    const continueButton = document.getElementById('continueButton');
+    const iframeContainer = document.getElementById('iframeContainer');
+    const closeButton = document.getElementById('closeButton');
+
+    continueButton.addEventListener('click', () => {
+        iframeContainer.style.display = 'block'; // Muestra el iframe con RegistroReserva.html
+    });
+
+    closeButton.addEventListener('click', () => {
+        iframeContainer.style.display = 'none'; // Oculta el iframe
+    });
+
+    window.addEventListener('message', function(event) {
+        if (event.origin === window.location.origin) { // Verifica que el mensaje provenga de la misma página
+            if (event.data === 'complete') {
+                window.location.href = 'Pago.html'; // Redirige a la página de pago
+            }
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const closeButton = document.getElementById('closeButton');
+    const iframeContainer = document.getElementById('iframeContainer');
+
+    // Agregar el evento de cierre al botón
+    closeButton.addEventListener('click', () => {
+        // Ocultar el modal (el contenedor con el iframe)
+        iframeContainer.style.display = 'none';
+
+        // Redirigir a index.html de forma normal
+        window.location.href = 'Index.html';
+    });
+});
+

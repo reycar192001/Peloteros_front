@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagar Reserva</title>
+    <link rel="stylesheet" href="Styles/PagoStyle.css">
+    <link rel="stylesheet" href="Styles/MensajeStyle.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pagar Reserva</h1>
+        <div class="image-container">
+            <img src="Recursos/cancha1.PNG" alt="Imagen de pago" class="payment-image">
+        </div>
+        <div class="total-payment">
+            <span>Total a pagar:</span>
+            <strong class="amount">S/. 40.00</strong>
+        </div>
+        <form id="payment-form">
+            <!-- Stripe.js insertará los campos de tarjeta aquí -->
+            <div id="card-element">
+                <!-- Este es el espacio donde Stripe coloca el formulario de tarjeta -->
+            </div>
+
+            <!-- Muestra un botón de pago -->
+            <button type="button" id="submit" onclick="confirmarPago()">Pagar</button>
+
+            <!-- Mensajes de error o confirmación -->
+            <div id="payment-message" class="hidden"></div>
+        </form>
+        <div class="payment-methods">
+            <img src="Recursos/visa.png" alt="Visa" class="payment-icon">
+            <img src="Recursos/master.png" alt="Mastercard" class="payment-icon">
+            <!-- Agregar más iconos de métodos de pago según corresponda -->
+        </div>
+        <div class="progress-bar">
+            <div class="progress" style="width: 0%;"></div>
+        </div>
+        <div id="payment-message" class="hidden">
+            <span class="message-icon">&#10004;</span> Pago exitoso
+        </div>
+        <div id="spinner" class="hidden">
+            <div class="loader"></div>
+        </div>
+    </div>
+
+    <!-- Cargar la librería de Stripe.js -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="Js/Scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

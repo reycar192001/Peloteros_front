@@ -1,18 +1,35 @@
-// script.js
+function validarToken() {
+    const token = localStorage.getItem('token'); 
+    if (token) {        
+        return token;
+    } else {        
+        alert("No hay token. Redirigiendo al login...");
+        window.location.href='Login.html';
+    }
+}
+
+const token = validarToken();
 
 // Cargar usuarios y mostrar en lista
 const cargarUsuarios = async () => {
     try {
-        const respuesta = await fetch('http://localhost:8090/peloteros/usuarios/listar');
-        if (respuesta.ok) {
-            const usuarios = await respuesta.json();
+        const response = await fetch('http://localhost:8090/peloteros/usuarios/listar', {           
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json"
+            }
+        }
+
+        )
+        if (response.ok) {
+            const usuarios = await response.json();
             let usuariosHTML = '';
             usuarios.forEach(usuario => {
                 usuariosHTML += `
                 <div class="usuario-item" data-id="${usuario.UsuarioID}">
                     <p><strong>Nombre:</strong> ${usuario.Nombre}</p>
-                    <p><strong>Correo:</strong> ${usuario.Correo}</p>
-                    
+                    <p><strong>Correo:</strong> ${usuario.Correo}</p>                    
                 </div>`;
             });
             document.getElementById('listaUsuarios').innerHTML = usuariosHTML;
@@ -35,7 +52,13 @@ const cargarUsuarios = async () => {
 // Cargar datos del usuario seleccionado en el formulario
 const cargarUsuarioParaActualizar = async (UsuarioID) => {
     try {
-        const respuesta = await fetch(`http://localhost:8090/peloteros/usuarios/buscar/${UsuarioID}`);
+        const respuesta = await fetch(`http://localhost:8090/peloteros/usuarios/buscar/${UsuarioID}`, {           
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json"
+            }
+        });
         if (respuesta.ok) {
             const usuario = await respuesta.json();
             document.getElementById('nombre').value = usuario.Nombre;

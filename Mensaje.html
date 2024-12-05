@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensaje</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Cabin:ital,wght@0,400..700;1,400..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+        body {
+            font-family: 'DM Sans', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center; /* Centra el contenido horizontalmente */
+            align-items: center; /* Centra el contenido verticalmente */
+            background-color: #f4f4f4; /* Fondo gris claro */
+        }
+        /* Estilos del card */
+        .card {
+            width: 300px;
+            padding: 20px;
+            background-color: #cacfd2; /* Color verde para éxito */
+            color: #000;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Icono de éxito */
+        .card .icon {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        /* Mensaje dentro del card */
+        .card .message {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Card de éxito -->
+    <div class="card">
+        <div class="icon">&#10004;</div> <!-- Ícono de éxito (check) -->
+        <div class="message">¡Pago realizado con éxito!</div>
+    </div>
+
+</body>
+</html>

@@ -21,34 +21,30 @@ form.addEventListener('submit', async function (event) {
                 'Content-Type': 'application/json' // Indicamos que enviamos JSON
             },
             body: JSON.stringify(credenciales) // Convertir los datos a JSON
+            
         });
-
         
 
         if (respuesta.status === 201 || respuesta.ok || respuesta.status ===200) {
-            const resultado = await respuesta.json();
-            console.log(resultado);
+            const resultado = await respuesta.json();            
             document.getElementById('resultado').innerHTML = 'Login exitoso!';
-            console.log('Login exitoso!')
-            
+            SaveData(xcorreo, resultado.token);            
             guardarToken(resultado.token);
-            window.location.href='index.html';
+            guardardatos('correo', xcorreo);
+            setTimeout(function(){           
+                window.location.href='index.html';                
+            }, 2000);
+            
         } else {
             document.getElementById('resultado').innerHTML = 'Error en las credenciales.';
-            document.getElementById('resultado').setAttribute("color", color);
-            
+            document.getElementById('resultado').setAttribute("color", color);            
             console.log('Error en las credenciales.')
         }
     } catch (error) {
         console.log(error);
         document.getElementById('resultado').setAttribute("text-color", color);
-        document.getElementById('resultado').innerHTML = 'Login exitoso!';
-        setTimeout(function(){
-            console.log("ya ta")
-            window.location.href='index.html';
-            console.log(resultado);
-            guardarToken(resultado.token);
-        }, 2000);
+        document.getElementById('resultado').innerHTML = 'Error en la petición.';
+        
     }
 });
 
@@ -58,4 +54,32 @@ function obtenerToken() {
 }
 function guardarToken(token) {
     localStorage.setItem('token', token);
+}
+
+function guardardatos( nombre, valor) {
+    localStorage.setItem(""+nombre, valor);
+}
+
+function obtenerdatos(nombre) {
+    const token = localStorage.getItem(nombre);
+    return token;
+}
+
+async function SaveData(scorreo, xtoken) {
+    try {
+        const response = await fetch('http://localhost:8090/peloteros/usuarios/buscarxcorreo/'+scorreo, {           
+            method: "GET",
+            headers: {                
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${xtoken}`
+            }            
+        });
+        const userData = await response.json();
+        console.log(userData)
+        localStorage.setItem('userData', JSON.stringify(userData))       
+    } catch (error) {
+        console.error("Error al obtener los datos de la API:", error);
+        //alert(`Sesion expirada.`);
+        //location.href = 'Login.html';
+    }
 }
